@@ -13,5 +13,6 @@ public class Application {
 		
 		logger.info("Hello Spring Boot");
 		logger.info("I like memes");
+		logger.info("I really like memes");
 	}
 }
