@@ -27,12 +27,12 @@ public class Main {
 		dwarves.add("Bombur");
 		dwarves.add("Thorin");
 
-		System.out.println("THe dwarfs in Snow White are: ");
+		System.out.println("The dwarfs in Snow White are: ");
 		for (int i = 0; i < dwarfs.size(); i++)
 			System.out.println(dwarfs.get(i));
 		
 		System.out.println("");
-		System.out.println("THe dwarves in THorin Oakenshield's party are: ");
+		System.out.println("The dwarves in Thorin Oakenshield's party are: ");
 		for (int i = 0; i < dwarves.size(); i++)
 			System.out.println(dwarves.get(i));
 	}
