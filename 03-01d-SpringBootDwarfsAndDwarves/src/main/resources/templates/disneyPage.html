@@ -7,12 +7,15 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title th:text="${pageTitle}">Dwarfs and Dwarves</title>
+
 </head>
 <body>
-
-	<div class="jumbotron text-center">
-		<h1>Disney Dwarfs</h1>
-		<h2>Snow White's Dwarfs</h2>
+<h1 align="center">Disney Dwarfs</h1>
+<br />
+<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div>
+		
+		<h2 align="center">Snow White's Dwarfs</h2>
 		<br />
 	</div>
 
@@ -24,9 +27,9 @@
 				<th>Image</th>
 
 			</tr>
-			<tr th:each="dwarf : ${dwarfs}">
-			<td th:text="${dwarf.name}"></td>
-				<td><img src="../static/Doc.png" th:src="${dwarf.image}" width="100" height="150" /></td>
+			<tr th:each="dwarf : ${dwarfs}" th:if="${dwarf.author} == 'Disney'">
+			<td th:text="${dwarf.name}">Doc</td>
+				<td><img src="../static/Doc.png" th:src="@{/} + ${dwarf.image}" width="100" height="150" /></td>
 			</tr>
 			
 		</table>
