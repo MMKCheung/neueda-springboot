@@ -14,7 +14,7 @@
 <br />
 <nav th:replace="layouts/nav :: navFragment"></nav>
 
-
+<br />
 
 	<div class="container">
 		<table class="table table-striped">
@@ -24,14 +24,16 @@
 				<th>Country</th>
 				<th>Place</th>
 				<th>Volume (m<sup>2</sup>)</th>
+				<th>Image</th>
 
 			</tr>
 			<tr th:each="building : ${volume}">
 			<td th:text="${building.rank}">1</td>
-			<td th:text="${building.name}">Boeing</td>
+			<td th:text="${building.name}">Boeing Everett Factory</td>
 			<td th:text="${building.country}">United States</td>
 			<td th:text="${building.place}">Everett, Washington</td>
 			<td th:text="${building.volume}">398000</td>
+			<td><img src="../static/boeingeverettfactory.jpg" th:src="@{/} + ${building.image}" width="200" /></td>
 			
 			</tr>
 			

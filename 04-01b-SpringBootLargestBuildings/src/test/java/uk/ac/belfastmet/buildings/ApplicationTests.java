@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.dwarfs;
+package uk.ac.belfastmet.buildings;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

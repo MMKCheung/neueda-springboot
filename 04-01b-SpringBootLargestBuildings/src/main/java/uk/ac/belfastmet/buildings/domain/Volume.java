@@ -7,15 +7,17 @@ public class Volume {
 	private String name;
 	private String country;
 	private String place;
-	private int volume;
+	private String volume;
+	private String image;
 	
-	public Volume(int rank, String name, String country, String place, int volume) {
+	public Volume(int rank, String name, String country, String place, String volume, String image) {
 		super();
 		this.rank = rank;
 		this.name = name;
 		this.country = country;
 		this.place = place;
 		this.volume = volume;
+		this.image = image;
 	}
 	public int getRank() {
 		return rank;
@@ -41,11 +43,18 @@ public class Volume {
 	public void setPlace(String place) {
 		this.place = place;
 	}
-	public int getVolume() {
+	public String getVolume() {
 		return volume;
 	}
-	public void setVolume(int volume) {
+	public void setVolume(String volume) {
 		this.volume = volume;
+	}
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	

@@ -14,7 +14,7 @@
 <br />
 <nav th:replace="layouts/nav :: navFragment"></nav>
 
-
+<br />
 
 	<div class="container">
 		<table class="table table-striped">
@@ -24,6 +24,7 @@
 				<th>Country</th>
 				<th>Place</th>
 				<th>Footprint (m<sup>2</sup>)</th>
+				<th>Image</th>
 
 			</tr>
 			<tr th:each="building : ${footprint}">
@@ -32,6 +33,7 @@
 			<td th:text="${building.country}">Netherlands</td>
 			<td th:text="${building.place}">Aalsmeer</td>
 			<td th:text="${building.footprint}">518000</td>
+			<td><img src="../static/aalsmeer.jpg" th:src="@{/} + ${building.image}" width="200" /></td>
 			
 			</tr>
 			

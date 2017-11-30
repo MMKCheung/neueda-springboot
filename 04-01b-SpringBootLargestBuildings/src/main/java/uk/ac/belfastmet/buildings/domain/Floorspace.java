@@ -6,10 +6,10 @@ public class Floorspace {
 	private String name;
 	private String country;
 	private String place;
-	private int floorArea;
+	private String floorArea;
 	private String image;
 
-	public Floorspace(int rank, String name, String country, String place, int floorArea, String image) {
+	public Floorspace(int rank, String name, String country, String place, String floorArea, String image) {
 		super();
 		this.rank = rank;
 		this.name = name;
@@ -51,11 +51,11 @@ public class Floorspace {
 		this.place = place;
 	}
 
-	public int getFloorArea() {
+	public String getFloorArea() {
 		return floorArea;
 	}
 
-	public void setFloorArea(int floorArea) {
+	public void setFloorArea(String floorArea) {
 		this.floorArea = floorArea;
 	}
 
