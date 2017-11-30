@@ -1,18 +1,17 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <body background="backgroundblue.jpg">
 
 	
+ <a href="http://localhost:8080/index.html"><img src="logo.png" alt = "logo"  style="margin-left:220px; margin-bottom:20px; max-width:100%"></a>
   
-    <a href="http://localhost:8080/index.html"><img src="logo.png" alt = "logo" width="75" style="padding: 2px";></a>
-  
-	<nav class="navbar navbar-default" style="background-color:	#D3D3D3;>
+	<nav class="navbar navbar-default" style="background-color:	#F5F5F5; padding-right:220px">
 		<div class="container-fluid">
-			
 		
 			
 			<ul class="nav navbar-nav navbar-right">
@@ -25,39 +24,49 @@
 		</div>
 	</nav>
 	<hr>
-<br /><br />
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="construction.jpg" alt="Los Angeles">
-    </div>
+<div class="container-fluid">
 
-    <div class="item">
-      <img src="front_page.png" alt="Chicago">
+  <div id="jsaAboutCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#jsaAboutCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#jsaAboutCarousel" data-slide-to="1"></li>
+      <li data-target="#jsaAboutCarousel" data-slide-to="2"></li>
+    </ol>
+ 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+ 
+	  <div class="item active">
+        <img class="centre-block" src="construction.jpg" alt="JSA-About"  />
+     
+      </div>
+    
+      <div class="item">
+        <img src="front_page.png" alt="JSA-About"  />
+     
+       
+      </div>
+ 
+      <div class="item">
+        <img src="titanicsurvivors.jpg" alt="JSA-About"  />
+      
+      
+      </div>
+  
     </div>
-
-    <div class="item">
-      <img src="titanicsurvivors.jpg" alt="New York">
-    </div>
+ 
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#jsaAboutCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#jsaAboutCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
 </body>
 </html>

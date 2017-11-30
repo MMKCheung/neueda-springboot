@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Buildings</title>
+
+</head>
+<body>
+<h1 align="center">Largest Floor Area</h1>
+<br />
+<nav th:replace="layouts/nav :: navFragment"></nav>
+
+
+
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+				<th>Rank</th>
+				<th>Name</th>
+				<th>Country</th>
+				<th>Place</th>
+				<th>Floor Area (m<sup>2</sup>)</th>
+
+			</tr>
+			<tr th:each="building : ${floorspace}">
+			<td th:text="${building.rank}">1</td>
+			<td th:text="${building.name}">New Century Global Center</td>
+			<td th:text="${building.country}">China</td>
+			<td th:text="${building.place}">Chengdu</td>
+			<td th:text="${building.floorArea}">1760000</td>
+			
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>
