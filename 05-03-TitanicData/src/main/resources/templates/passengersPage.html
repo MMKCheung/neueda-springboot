@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Titanic Passengers</title>
+<style>
+th, tr {text-align:center;}
+</style>
+</head>
+<body>
+<h1 align="center">Passengers</h1>
+<br />
+<nav th:replace="layout/nav :: navFragment"></nav>
+	
+		
+<br /><br />	
+
+
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+				<th>Passenger Id</th>
+				<th>Survived</th>
+				<th>Pclass</th>
+				<th>Name</th>
+				<th>Sex</th>
+				<th>Age</th>
+				<th>SibSp</th>
+				<th>Parch</th>
+				<th>Ticket</th>
+				<th>Fare</th>
+				<th>Cabin</th>
+				<th>Embarked</th>
+
+			</tr>
+			<tr th:each="passengers : ${passengers}">
+			<td th:text="${passengers.passengerId}">Doc</td>
+			<td th:text="${passengers.survived}">Doc</td>
+			<td th:text="${passengers.pclass}">Doc</td>
+			<td th:text="${passengers.name}">Doc</td>
+			<td th:text="${passengers.sex}">Doc</td>
+			<td th:text="${passengers.age}">Doc</td>
+			<td th:text="${passengers.sibsp}">Doc</td>
+			<td th:text="${passengers.parch}">Doc</td>
+			<td th:text="${passengers.ticket}">Doc</td>
+			<td th:text="${passengers.fare}">Doc</td>
+			<td th:text="${passengers.cabin}">Doc</td>
+			<td th:text="${passengers.embarked}">Doc</td>
+
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>
