@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Dwarfs and Dwarves</title>
+<style>
+th, tr {text-align:center;}
+</style>
+</head>
+<body>
+<h1 align="center">Disney Dwarfs</h1>
+<br />
+<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div>
+		
+		<h2 align="center">Snow White's Dwarfs</h2>
+		<br />
+	</div>
+
+
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Image</th>
+
+			</tr>
+			<tr th:each="dwarf : ${dwarfs}">
+			<td th:text="${dwarf.name}">Doc</td>
+				<td><img src="../static/Doc.png" th:src="@{/} + ${dwarf.image}" width="100" height="150" /></td>
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Pop</title>
+<style>
+th, tr {text-align:center;}
+</style>
+</head>
+<body>
+<h1 align="center">Top 10 Rock Charts</h1>
+<br />
+<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+				<th>Artist</th>
+				<th>Name</th>
+				<th>Album</th>
+				<th>Image</th>
+
+			</tr>
+			<tr th:each="rock : ${music}" th:if="${rock.genre} == 'rock'">
+			<td th:text="${rock.artist}">Doc</td>
+			<td th:text="${rock.name}">Doc</td>
+			<td th:text="${rock.album}">Doc</td>
+				<td><img src="../static/r1.jpg" th:src="@{/} + ${rock.image}" width="200" height="200" /></td>
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>
