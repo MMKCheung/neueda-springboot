@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<h1>Form Example</h1>
+	</div>
+	<div class="container">
+		<form action="/results" method="GET">
+			First name:<br /> <input type="text" name="firstname" /><br />
+			Last name:<br /> <input type="text" name="lastname" /><br />
+			<input type="radio" name="gender" value="male" checked="checked" /> Male<br />
+			<input type="radio" name="gender" value="female" /> Female<br /> 
+			<input type="radio" name="gender" value="other" /> Other<br />
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+</body>
+
+</html>
