@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Survivors</title>
+<style>
+th, tr {text-align:center;}
+</style>
+</head>
+<body>
+<h1 align="center">Cereals</h1>
+<br />
+<nav th:replace="layout/nav :: navFragment"></nav>
+	
+		
+<br /><br />	
+
+
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+				<th>Cereal ID</th>
+				<th>Manufacturer</th>
+				<th>Cereal</th>
+				<th>Energy (kJ)</th>
+				<th>Calories (kcal)</th>
+				<th>Protein (g)</th>
+				<th>Carbohydrate (g)</th>
+				<th>Sugars (g)</th>
+				<th>Fat (g)</th>
+				<th>Saturates (g)</th>
+				<th>Fibre (g)</th>
+				<th>Sodium (g)</th>
+				<th>Salt (g)</th>
+				<th>Iron (mg)</th>
+
+			</tr>
+			<tr th:each="cereals : ${cereal}">
+			<td th:text="${cereals.cereal Id}">Doc</td>
+			<td th:text="${cereals.manufacturer}">Doc</td>
+			<td th:text="${cereals.cereal}">Doc</td>
+			<td th:text="${cereals.energy}">Doc</td>
+			<td th:text="${cereals.calories}">Doc</td>
+			<td th:text="${cereals.protein}">Doc</td>
+			<td th:text="${cereals.carbohydrate}">Doc</td>
+			<td th:text="${cereals.sugars}">Doc</td>
+			<td th:text="${cereals.fat}">Doc</td>
+			<td th:text="${cereals.saturates}">Doc</td>
+			<td th:text="${cereals.fibre}">Doc</td>
+			<td th:text="${cereals.sodium}">Doc</td>
+			<td th:text="${cereals.salt}">Doc</td>
+			<td th:text="${cereals.iron}">Doc</td>
+
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>
