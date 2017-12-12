@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Create</title>
+<style>
+th, tr {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1 align="center">Cereals</h1>
+	<br />
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+	<br />
+	<br />
+
+	<div class="container">
+
+		<form class="form-horizontal" th:action="@{/cereal/save}"
+			th:object="${cereal}" method="post">
+
+
+			<!--  hidden field is important! -->
+			<input type="hidden" th:field="${cereal.cerealId}" />
+
+				<label class="col-md-2">Manufacturer</label>
+			<div class="form-group">	
+					<input type="text" class="form-control"
+						th:field="${cereal.manufacturer}" /> 
+					<span th:if="${#fields.hasErrors('manufacturer')}" th:errors="${cereal.manufacturer}"
+					th:class="help-block">Manufacturer Errors</span>	
+				</div>
+			
+			<br />
+			<div class="form-group">	
+					<input type="text" class="form-control"
+						th:field="${cereal.name}" /> 
+					<span th:if="${#fields.hasErrors('name')}" th:errors="${cereal.name}"
+					th:class="help-block">Name Errors</span>	
+				</div>
+		
+
+			<table class="table table-striped">
+				<tr>
+
+					<th>Nutrition</th>
+					<th>Value</th>
+				</tr>
+				<tr>
+					<td>Energy (kJ)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.energy}" /></td>
+				</tr>
+				<tr>
+					<td>Calories (kcal)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.calories}" /></td>
+				</tr>
+				<tr>
+					<td>Protein (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.protein}" /></td>
+				</tr>
+				<tr>
+					<td>Carbohydrate (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.carbohydrate}" /></td>
+				</tr>
+				<tr>
+					<td>Sugars (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.sugars}" /></td>
+				</tr>
+				<tr>
+					<td>Fat (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.fat}" /></td>
+				</tr>
+				<tr>
+					<td>Saturates (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.saturates}" /></td>
+				</tr>
+				<tr>
+					<td>Fibre (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.fibre}" /></td>
+				</tr>
+				<tr>
+					<td>Sodium (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.sodium}" /></td>
+				</tr>
+				<tr>
+					<td>Salt (g)</td>
+					<td><input type="text" class="form-control"
+						th:field="${cereal.salt}" /></td>
+				</tr>
+				<tr>
+					<td>Iron (mg)</td> 
+					<td><input type="text" class="form-control"
+						th:field="${cereal.iron}" /></td>
+				</tr>
+
+
+
+			</table>
+			<button type="submit" class="btn btn-primary">Save</button>
+			
+		</form>
+	</div>
+
+
+</body>
+</html>
