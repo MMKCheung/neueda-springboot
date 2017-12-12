@@ -12,11 +12,11 @@ public class Cereal {
 	@GeneratedValue
 	private Integer cerealId;
 	private String manufacturer;
-	private String cereal;
+	private String name;
 	private Integer energy;
 	private Integer calories;
 	private Float protein;
-	private Float carbohydrates;
+	private Float carbohydrate;
 	private Float sugars;
 	private Float fat;
 	private Float saturates;
@@ -25,17 +25,17 @@ public class Cereal {
 	private Float salt;
 	private Float iron;
 	
-	public Cereal(Integer cerealId, String manufacturer, String cereal, Integer energy, Integer calories, Float protein,
-			Float carbohydrates, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt,
+	public Cereal(Integer cerealId, String manufacturer, String name, Integer energy, Integer calories, Float protein,
+			Float carbohydrate, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt,
 			Float iron) {
 		super();
 		this.cerealId = cerealId;
 		this.manufacturer = manufacturer;
-		this.cereal = cereal;
+		this.name = name;
 		this.energy = energy;
 		this.calories = calories;
 		this.protein = protein;
-		this.carbohydrates = carbohydrates;
+		this.carbohydrate = carbohydrate;
 		this.sugars = sugars;
 		this.fat = fat;
 		this.saturates = saturates;
@@ -60,11 +60,11 @@ public class Cereal {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-	public String getCereal() {
-		return cereal;
+	public String getName() {
+		return name;
 	}
-	public void setCereal(String cereal) {
-		this.cereal = cereal;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public Integer getEnergy() {
 		return energy;
@@ -84,11 +84,11 @@ public class Cereal {
 	public void setProtein(Float protein) {
 		this.protein = protein;
 	}
-	public Float getCarbohydrates() {
-		return carbohydrates;
+	public Float getCarbohydrate() {
+		return carbohydrate;
 	}
-	public void setCarbohydrates(Float carbohydrates) {
-		this.carbohydrates = carbohydrates;
+	public void setCarbohydrate(Float carbohydrate) {
+		this.carbohydrate = carbohydrate;
 	}
 	public Float getSugars() {
 		return sugars;
@@ -134,4 +134,4 @@ public class Cereal {
 	}
 	
 	
-}C
+}

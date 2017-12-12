@@ -6,7 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import uk.ac.belfastmet.titanicdata.repositories.PassengerRepository;
+import uk.ac.belfastmet.cereal.repositories.CerealRepository;
+
 
 
 
@@ -15,40 +16,24 @@ import uk.ac.belfastmet.titanicdata.repositories.PassengerRepository;
 	public class CerealController {
 		
 		@Autowired
-		PassengerRepository passengerRepository;
+		CerealRepository cerealRepository;
 		
-		public PassengerController(PassengerRepository passengerRepository) {
+		public CerealController(CerealRepository cerealRepository) {
 			super();
-			this.passengerRepository = passengerRepository;
+			this.cerealRepository = cerealRepository;
 		}
 		
 		
-		@GetMapping("/passengers")
-		public String passengers(Model model) {
-			model.addAttribute("pageTitle", "Passengers!");
+		@GetMapping("/cereal")
+		public String cereals(Model model) {
+			model.addAttribute("pageTitle", "Cereal!");
 			//this.dwarfService = new DwarfService();
-			model.addAttribute("passengers", this.passengerRepository.findAll());
+			model.addAttribute("cereals", this.cerealRepository.findAll());
 
-			return "passengersPage";
+			return "cerealPage";
 		}
 		
-		@GetMapping("/survivors")
-		public String survivors(Model model) {
-			model.addAttribute("pageTitle", "Survivors!");
-			//this.dwarfService = new DwarfService();
-			model.addAttribute("passengers", this.passengerRepository.findBySurvived(1));
-
-			return "survivors";
-		}
-		
-		@GetMapping("/firstclass")
-		public String firstclass(Model model) {
-			model.addAttribute("pageTitle", "First-Class Passengers!");
-			//this.dwarfService = new DwarfService();
-			model.addAttribute("passengers", this.passengerRepository.findByPclass(1));
-
-			return "firstclass";
-		}
+	
 
 
 		}

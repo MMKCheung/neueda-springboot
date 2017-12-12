@@ -39,21 +39,21 @@ th, tr {text-align:center;}
 				<th>Iron (mg)</th>
 
 			</tr>
-			<tr th:each="cereals : ${cereal}">
-			<td th:text="${cereals.cereal Id}">Doc</td>
-			<td th:text="${cereals.manufacturer}">Doc</td>
-			<td th:text="${cereals.cereal}">Doc</td>
-			<td th:text="${cereals.energy}">Doc</td>
-			<td th:text="${cereals.calories}">Doc</td>
-			<td th:text="${cereals.protein}">Doc</td>
-			<td th:text="${cereals.carbohydrate}">Doc</td>
-			<td th:text="${cereals.sugars}">Doc</td>
-			<td th:text="${cereals.fat}">Doc</td>
-			<td th:text="${cereals.saturates}">Doc</td>
-			<td th:text="${cereals.fibre}">Doc</td>
-			<td th:text="${cereals.sodium}">Doc</td>
-			<td th:text="${cereals.salt}">Doc</td>
-			<td th:text="${cereals.iron}">Doc</td>
+			<tr th:each="cereals : ${cereals}">
+			<td th:text="${cereals.cerealId}">cerealId</td>
+			<td th:text="${cereals.manufacturer}">manufacturer</td>
+			<td th:text="${cereals.name}">cereal</td>
+			<td th:text="${cereals.energy}">energy</td>
+			<td th:text="${cereals.calories}">calories</td>
+			<td th:text="${cereals.protein}">protein</td>
+			<td th:text="${cereals.carbohydrate}">carbohydrate</td>
+			<td th:text="${cereals.sugars}">sugars</td>
+			<td th:text="${cereals.fat}">fat</td>
+			<td th:text="${cereals.saturates}">saturates</td>
+			<td th:text="${cereals.fibre}">fibre</td>
+			<td th:text="${cereals.sodium}">sodium</td>
+			<td th:text="${cereals.salt}">salt</td>
+			<td th:text="${cereals.iron}">iron</td>
 
 			</tr>
 			
