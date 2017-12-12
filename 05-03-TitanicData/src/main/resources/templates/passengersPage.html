@@ -37,7 +37,7 @@ th, tr {text-align:center;}
 				<th>Embarked</th>
 
 			</tr>
-			<tr th:each="passengers : ${passengers}">
+			<tr th:each="passengers : ${er}">
 			<td th:text="${passengers.passengerId}">Doc</td>
 			<td th:text="${passengers.survived}">Doc</td>
 			<td th:text="${passengers.pclass}">Doc</td>

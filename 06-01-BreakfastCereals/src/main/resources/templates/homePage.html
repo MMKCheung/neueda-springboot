@@ -10,37 +10,65 @@
 <title>Cereal</title>
 </head>
 <body>
-<h1 align="center">Welcome to the Home Page!</h1>
-<br />
+	<h1 align="center">Welcome to the Home Page!</h1>
+	<br />
 
-<nav th:replace="layout/nav :: navFragment"></nav>
+	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="container">
-		<div class="row">
-			
-		
-			<div class="col-md-4">
-				<div class="thumbnail">
-					<a href="/cereal"> <img class="img-circle"
-						src="http://www.kelloggs.co.uk/content/dam/workarea/assetpushqueue/assetpushqueue-WebAssets-Approved/images/web-raw-Approved/eng%20UK/40/03/prod_img-254003.jpg.thumb.319.319.png" alt="passengers" height = "200" width ="200" />
-						<div class="caption">
-							<p align="center">Click here to see the list of cereals.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-	
-	
-	
+
+
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Cereal ID</th>
+				<th>Manufacturer</th>
+				<th>Cereal</th>
+				<th>Links (View Edit Delete)</th>
+			</tr>
+
+			<tr th:each="cereal : ${cereals}">
+				<td th:text="${cereal.cerealId}">cerealId</td>
+				<td th:text="${cereal.manufacturer}">Kellogg's</td>
+				<td th:text="${cereal.name}">Cornflakes</td>
+				<td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a>
+					<a href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a>
+					<a href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a>
+				</td>
+			</tr>
+
+		</table>
 	</div>
-	</div>
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 	<div class="thumbnail">
-		<a href="https://www.novaragnarok.com/forum/uploads/monthly_2017_07/EZ.jpg.7bd0108b3a7b9c281ac56c75742e6c61.jpg">
-	<div class="caption">
-							<p align="center">Click here for memes</p>
-						</div>
-					</a>
-	
+		<a
+			href="https://www.novaragnarok.com/forum/uploads/monthly_2017_07/EZ.jpg.7bd0108b3a7b9c281ac56c75742e6c61.jpg">
+			<div class="caption">
+				<p align="center">Click here for memes</p>
+			</div>
+		</a>
+
 	</div>
 
 </body>

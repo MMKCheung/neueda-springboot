@@ -29,7 +29,7 @@ import uk.ac.belfastmet.titanicdata.repositories.PassengerRepository;
 		public String passengers(Model model) {
 			model.addAttribute("pageTitle", "Passengers!");
 			//this.dwarfService = new DwarfService();
-			model.addAttribute("passengers", this.passengerRepository.findAll());
+			model.addAttribute("er", this.passengerRepository.findAll());
 
 			return "passengersPage";
 		}
