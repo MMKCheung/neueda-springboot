@@ -4,6 +4,7 @@
 <head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title th:text="${pageTitle}">Titanic Passengers</title>
@@ -20,6 +21,7 @@ th, tr {text-align:center;}
 <br /><br />	
 
 	<div class="container">
+	<input class="form-control" id="myInput" type="text" placeholder="Search.." />
 
 		<div class="alert alert-success" role="alert" th:if="${message}">
 			<p th:text="${message}"></p>
@@ -33,20 +35,32 @@ th, tr {text-align:center;}
 				
 				<th>Links (View Edit Delete)</th>
 			</tr>
+			<tbody id="myTable">
+				<tr th:each="passengers : ${er}">
+					<td th:text="${passengers.passengerId}">Doc</td>
+					<td th:text="${passengers.name}">Doc</td>
 
-			<tr th:each="passengers : ${er}">
-				<td th:text="${passengers.passengerId}">Doc</td>
-				<td th:text="${passengers.name}">Doc</td>
-				
-				<td><a href="#" th:href="@{passengers/view/} + ${passengers.passengerId}">View</a>
-					<a href="#" th:href="@{passengers/edit/} + ${passengers.passengerId}">Edit</a>
-					<a href="#" th:href="@{passengers/delete/} + ${passengers.passengerId}">Delete</a>
-				</td>
-			</tr>
-
+					<td><a href="#"
+						th:href="@{passengers/view/} + ${passengers.passengerId}">View</a>
+						<a href="#"
+						th:href="@{passengers/edit/} + ${passengers.passengerId}">Edit</a>
+						<a href="#"
+						th:href="@{passengers/delete/} + ${passengers.passengerId}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 		<a class="btn btn-primary" href="/passengers/add" role="button">Add New</a> 
 	</div>
-
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 </body>
 </html>
