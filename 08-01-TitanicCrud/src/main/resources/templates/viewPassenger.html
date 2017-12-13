@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Survivors</title>
+<style>
+html{overflow-y: scroll; }
+th, tr {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+	<h1 align="center">Passengers</h1>
+	<br />
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+	<br />
+	<br />
+
+	<div class="container">
+		
+		<table class="table table-striped">
+
+			<tr>
+				<td>Passenger ID</td>
+				<td th:text="${passenger.passengerId}">energy</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td th:text="${passenger.name}">calories</td>
+			</tr>
+			<tr>
+				<td>Survived</td>
+				<td th:text="${passenger.survived}">protein</td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td th:text="${passenger.age}">carbohydrate</td>
+			</tr>
+			<tr>
+				<td>Sex</td>
+				<td th:text="${passenger.sex}">sugars</td>
+			</tr>
+			<tr>
+				<td>Class</td>
+				<td th:text="${passenger.pclass}">fat</td>
+			</tr>
+			<tr>
+				<td>Siblings and Spouses</td>
+				<td th:text="${passenger.sibsp}">saturates</td>
+			</tr>
+			<tr>
+				<td>Parents and Children</td>
+				<td th:text="${passenger.parch}">fibre</td>
+			</tr>
+			<tr>
+				<td>Ticket</td>
+				<td th:text="${passenger.ticket}">sodium</td>
+			</tr>
+			<tr>
+				<td>Fare</td>
+				<td th:text="${passenger.fare}">salt</td>
+			</tr>
+			<tr>
+				<td>Cabin</td>
+				<td th:text="${passenger.cabin}">iron</td>
+			</tr>
+			<tr>
+				<td>Embarked</td>
+				<td th:text="${passenger.embarked}">iron</td>
+			</tr>
+
+		</table>
+
+
+
+
+
+	</div>
+
+
+</body>
+</html>

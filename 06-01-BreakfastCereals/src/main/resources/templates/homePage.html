@@ -16,7 +16,9 @@
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="container">
 
-
+<div class="alert alert-success" role="alert" th:if="${message}">
+<p th:text="${message}"></p>
+</div>
 
 		<table class="table table-striped">
 

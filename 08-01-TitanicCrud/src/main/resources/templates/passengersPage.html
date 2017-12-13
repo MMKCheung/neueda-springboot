@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Titanic Passengers</title>
+<style>
+th, tr {text-align:center;}
+</style>
+</head>
+<body>
+<h1 align="center">Passengers</h1>
+<br />
+<nav th:replace="layout/nav :: navFragment"></nav>
+	
+		
+<br /><br />	
+
+	<div class="container">
+
+		<div class="alert alert-success" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+		</div>
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Passenger ID</th>
+				<th>Passenger Name</th>
+				
+				<th>Links (View Edit Delete)</th>
+			</tr>
+
+			<tr th:each="passengers : ${er}">
+				<td th:text="${passengers.passengerId}">Doc</td>
+				<td th:text="${passengers.name}">Doc</td>
+				
+				<td><a href="#" th:href="@{passengers/view/} + ${passengers.passengerId}">View</a>
+					<a href="#" th:href="@{passengers/edit/} + ${passengers.passengerId}">Edit</a>
+					<a href="#" th:href="@{passengers/delete/} + ${passengers.passengerId}">Delete</a>
+				</td>
+			</tr>
+
+		</table>
+		<a class="btn btn-primary" href="/passengers/add" role="button">Add New</a> 
+	</div>
+
+</body>
+</html>
