@@ -7,8 +7,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title th:text="${pageTitle}">Titanic Passengers</title>
+<title th:text="${pageTitle}">beneficiaries</title>
 <style>
+html{overflow-y: scroll;}
 th, tr {text-align:center;}
 </style>
 <script>
@@ -23,8 +24,10 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<h1 align="center">Passengers</h1>
-<br />
+<div class="container-fluid" style="background-color: silver; height:100px; padding-top:10px">
+<h1 align="center">Beneficiaries</h1>
+</div>
+
 <nav th:replace="layout/nav :: navFragment"></nav>
 	
 		
@@ -40,27 +43,27 @@ $(document).ready(function(){
 		<table class="table table-striped">
 
 			<tr>
-				<th>Passenger ID</th>
-				<th>Passenger Name</th>
+				<th>Beneficiary ID</th>
+				<th>Beneficiary Name</th>
 				
 				<th>Links (View Edit Delete)</th>
 			</tr>
 			<tbody id="myTable">
-				<tr th:each="passengers : ${er}">
-					<td th:text="${passengers.passengerId}">Doc</td>
-					<td th:text="${passengers.name}">Doc</td>
+				<tr th:each="beneficiary : ${er}">
+					<td th:text="${beneficiary.beneficiaryId}"></td>
+					<td th:text="${beneficiary.name}"></td>
 
 					<td><a href="#"
-						th:href="@{passengers/view/} + ${passengers.passengerId}">View</a>
+						th:href="@{beneficiaries/view/} + ${beneficiary.beneficiaryId}">View</a>
 						<a href="#"
-						th:href="@{passengers/edit/} + ${passengers.passengerId}">Edit</a>
+						th:href="@{beneficiaries/edit/} + ${beneficiary.beneficiaryId}">Edit</a>
 						<a href="#"
-						th:href="@{passengers/delete/} + ${passengers.passengerId}">Delete</a>
+						th:href="@{beneficiaries/delete/} + ${beneficiary.beneficiaryId}">Delete</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<a class="btn btn-primary" href="/passengers/add" role="button">Add New</a> 
+		<a class="btn btn-primary" href="/beneficiaries/add" role="button">Add New</a> 
 	</div>
 
 </body>

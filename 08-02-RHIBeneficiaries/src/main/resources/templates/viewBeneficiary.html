@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Survivors</title>
+<style>
+html{overflow-y: scroll; }
+th, tr {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid" style="background-color: silver; height:100px; padding-top:10px">
+	<h1 align="center">Beneficiary</h1>
+	</div>
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+	<br />
+	<br />
+
+	<div class="container">
+		
+		<table class="table table-striped">
+
+			<tr>
+				<td>Beneficiary ID</td>
+				<td th:text="${beneficiary.beneficiaryId}">energy</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td th:text="${beneficiary.name}">calories</td>
+			</tr>
+			<tr>
+				<td>Date of Application</td>
+				<td th:text="${beneficiary.date}">protein</td>
+			</tr>
+			<tr>
+				<td>Business or Installation Location</td>
+				<td th:text="${beneficiary.location}">carbohydrate</td>
+			</tr>
+			<tr>
+				<td>Technology Type Installation</td>
+				<td th:text="${beneficiary.techtype}">sugars</td>
+			</tr>
+			<tr>
+				<td>Capacity (kWth)</td>
+				<td th:text="${beneficiary.capacity}">fat</td>
+			</tr>
+			<tr>
+				<td>Amount of payments made to 28 February 2017 (&#163;)</td>
+				<td th:text="${beneficiary.payment}">saturates</td>
+			</tr>
+	
+
+		</table>
+
+
+
+
+
+	</div>
+
+
+</body>
+</html>
