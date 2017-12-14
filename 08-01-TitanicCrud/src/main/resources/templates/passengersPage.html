@@ -4,23 +4,14 @@
 <head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title th:text="${pageTitle}">Titanic Passengers</title>
 <style>
 th, tr {text-align:center;}
 </style>
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
+
 </head>
 <body>
 <h1 align="center">Passengers</h1>
@@ -31,12 +22,25 @@ $(document).ready(function(){
 <br /><br />	
 
 	<div class="container">
-	<input class="form-control" id="myInput" type="text" placeholder="Search..." />
+
 <br />	
 		<div class="alert alert-success" role="alert" th:if="${message}">
 			<p th:text="${message}"></p>
-		</div>
-
+	</div>
+	<div class="container">
+<form action="/passengers/search" method="POST" id="searchForm">
+                     <select class="col-sm-2" form="searchForm" name="searchField">
+                           <option value="name">Name</option>
+                           <option value="embarked">Embarked</option>
+                           <option value="passengerClass">Passenger Class</option>
+                     </select> 
+                     <input type="text" class="col-sm-6" name="searchString"
+                           form="searchForm"></input>
+                     <button type="submit" value="search" form="searchForm"
+                           class="btn btn-primary col-sm-2">Search</button>
+              </form>
+</div>
+<br />
 		<table class="table table-striped">
 
 			<tr>
