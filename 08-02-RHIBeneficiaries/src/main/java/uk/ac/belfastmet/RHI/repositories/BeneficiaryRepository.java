@@ -6,6 +6,7 @@ import uk.ac.belfastmet.RHI.domain.Beneficiary;
 
 
 
-public interface BeneficiaryRepository extends CrudRepository<Beneficiary, Integer>{
 
+public interface BeneficiaryRepository extends CrudRepository<Beneficiary, Integer>{
+	Iterable<Beneficiary> findByNameLike(String searchField);
 }
