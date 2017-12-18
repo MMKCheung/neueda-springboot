@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<style>
+html {
+	overflow-y: scroll;
+}
+
+th, tr {
+	text-align: center;
+}
+</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Home Page</title>
+</head>
+<body>
+	<div class="container-fluid"
+		style="background-color: silver; height: 100px; padding-top: 10px">
+		<h1 align="center">Matt's Magnificent Weather Forecast</h1>
+	</div>
+
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="container">
+		<div class="row">
+
+
+			<br /> 
+			<h2 align="center">London</h2>
+			<br />
+
+			<table class="table table-striped">
+
+				<tr>
+					<td>Description</td>
+					<td th:text="${weather.description}">energy</td>
+				</tr>
+				<tr>
+					<td>Precipitation</td>
+					<td th:text="${weather.precipitation}">calories</td>
+				</tr>
+				<tr>
+					<td>Temperature</td>
+					<td th:text="${weather.temperature}">protein</td>
+				</tr>
+				<tr>
+					<td>Humidity</td>
+					<td th:text="${weather.humidity}">carbohydrate</td>
+				</tr>
+				<tr>
+					<td>Pressure</td>
+					<td th:text="${weather.pressure}">sugars</td>
+				</tr>
+				<tr>
+					<td>Cloudcover</td>
+					<td th:text="${weather.cloudcover}">fat</td>
+				</tr>
+				<tr>
+					<td>Wind Speed</td>
+					<td th:text="${weather.wind.speed}">saturates</td>
+				</tr>
+				<tr>
+					<td>Wind Direction</td>
+					<td th:text="${weather.wind.direction}">saturates</td>
+				</tr>
+				<tr>
+					<td>Image</td>
+					<td><img src="" th:src="${weather.image}" /></td>
+				</tr>
+
+
+
+			</table>
+
+
+
+
+
+		</div>
+
+
+
+	</div>
+
+</body>
+</html>

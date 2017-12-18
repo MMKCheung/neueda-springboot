@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<style>
+html {
+	overflow-y: scroll;
+}
+
+th, tr {
+	text-align: center;
+}
+</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Home Page</title>
+</head>
+<body>
+	<div class="container-fluid"
+		style="background-color: silver; height: 100px; padding-top: 10px">
+		<h1 align="center">Matt's Magnificent Weather Forecast</h1>
+	</div>
+
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="container">
+		<div class="row">
+
+
+<br /><br />
+
+			<div class="container">
+				<div class="col-md-4">
+
+					<a href="/belfast"> <img class="img-circle"
+						src="https://s.inyourpocket.com/gallery/108140.jpg" alt="belfast"
+						 align="middle" height="300" width="350" />
+						<div class="caption">
+							<p align="center">Click here to see the weather in Belfast.</p>
+						</div>
+					</a>
+
+				</div>
+				<div class="col-md-4">
+
+					<a href="/london"> <img class="img-circle"
+						src="https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg"
+						alt="london" align="middle" height="300" width="350" />
+						<div class="caption">
+							<p align="center">Click here to see the weather in London.</p>
+						</div>
+					</a>
+
+				</div>
+
+
+
+				<div class="col-md-4">
+
+					<a href="/dublin"> <img class="img-circle"
+						src="http://gcgrapevine.com/wp-content/uploads/2016/08/dublin.jpg"
+						alt="dublin" align="middle" height="300" width="350" />
+						<div class="caption">
+							<p align="center">Click here to see the weather in Dublin.</p>
+						</div>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>

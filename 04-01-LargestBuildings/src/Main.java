@@ -26,5 +26,7 @@ public class Main {
 		floorspace.add(SCC);
 		floorspace.add(CWS);
 		floorspace.add(BTS);
+		
+		System.out.println(floorspace);
 	}
 }

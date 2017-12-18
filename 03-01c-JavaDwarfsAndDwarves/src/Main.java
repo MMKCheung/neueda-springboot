@@ -78,5 +78,12 @@ public class Main {
 			}
 					
 		}
+		
+		String dwarfString = "";
+		for (String s:dwarfs) {
+			dwarfString += s +"/t";
+		}
+			System.out.println(dwarfString);
+		}
 	}
-}
+
