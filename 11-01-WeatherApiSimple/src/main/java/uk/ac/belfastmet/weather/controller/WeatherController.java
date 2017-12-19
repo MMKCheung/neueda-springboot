@@ -22,6 +22,7 @@ private String baseWeatherUrl;
 		super();
 	
 	}
+	
 	@GetMapping("")
 	public String home(Model model) {
 		
@@ -34,7 +35,7 @@ private String baseWeatherUrl;
 	@GetMapping("/belfast")
 	public String belfastPage(Model model) {
 		
-		model.addAttribute("pageTitle", "Weather");
+		model.addAttribute("pageTitle", "Weather in Belfast");
 		
 		String belfastWeatherURL = this.baseWeatherUrl + "belfast";
 		RestTemplate restTemplate = new RestTemplate();
@@ -50,7 +51,7 @@ private String baseWeatherUrl;
 	@GetMapping("/london")
 	public String london(Model model) {
 		
-		model.addAttribute("pageTitle", "Weather");
+		model.addAttribute("pageTitle", "Weather in London");
 		
 		String londonWeatherURL = this.baseWeatherUrl + "london";
 		RestTemplate restTemplate = new RestTemplate();
@@ -65,7 +66,7 @@ private String baseWeatherUrl;
 	@GetMapping("/dublin")
 	public String dublin(Model model) {
 		
-		model.addAttribute("pageTitle", "Weather");
+		model.addAttribute("pageTitle", "Weather in Dublin");
 		
 		String dublinWeatherURL = this.baseWeatherUrl + "dublin";
 		RestTemplate restTemplate = new RestTemplate();

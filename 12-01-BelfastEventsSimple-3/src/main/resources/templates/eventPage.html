@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<style>
+html {
+	overflow-y: scroll;
+}
+
+th, tr {
+	text-align: center;
+}
+</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<title th:text="${pageTitle}">Home Page</title>
+</head>
+<body>
+	<div class="container-fluid"
+		style="background-color: silver; height: 100px; padding-top: 10px">
+		<h1 align="center">Matt's Magnificent Weather Forecast</h1>
+	</div>
+
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+
+	<br />
+	<h2 align="center">Belfast Events</h2>
+	<br />
+
+
+
+	<div class="container" th:each="event:${events}">
+		<p th:text="${event.identifier}">energy</p>
+		<p th:text="${event.title}">Name</p>
+		<p th:text="${event.url}">calories</p>
+
+
+
+		<p th:text="${#dates.format(event.startDate, 'dd/MM/yyyy')}">31/12/2017</p>
+		<p th:if="${event.endDate !=null}"
+			th:text="${#dates.format(event.endDate, 'dd/MM/yyyy')}">31/12/2017</p>
+
+
+		<p th:text="${event.time}">fat</p>
+
+		<div th:switch="${event.venueUrl}">
+			<p th:case="''" th:text="${event.venue}">Venue has no link</p>
+			<p th:case="*">
+				<a href="" th:href="${event.venueUrl}" th:text="${event.venue}"
+					target="_blank">Venue has a link</a>
+			</p>
+
+		</div>
+
+		
+
+		<p th:text="${event.audience}">saturates</p>
+		<p th:text="${event.theme}">saturates</p>
+		<p th:text="${event.cost}">saturates</p>
+		<p th:utext="${event.content}">saturates</p>
+
+		<div th:switch="${event.image}">
+			<p th:case="''">
+				<!--  no image -->
+			</p>
+			<p th:case="*">
+				<img src="" th:src="${event.image}" />
+			</p>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>

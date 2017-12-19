@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Cereal</title>
+</head>
+<body>
+	<h1 align="center">Welcome to the Home Page!</h1>
+	<br />
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="container">
+
+
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Event Name</th>
+				<th>Date</th>
+				<th>Location</th>
+				<th>Cost</th>
+				<th>Details</th>
+				<th>Event ID</th>
+			</tr>
+
+			<tr th:each="event : ${events}">
+				<td th:text="${event.title}">cerealId</td>
+				<td th:text="${event.startDate}">Kellogg's</td>
+				<td th:text="${event.venue}">Cornflakes</td>
+				<td th:text="${event.cost}">Cornflakes</td>
+				<td><a href="#" th:href="@{/} + ${event.identifier}">View</a></td>
+				<td th:text="${event.identifier}">Cornflakes</td>
+
+			</tr>
+
+		</table>
+		
+	</div>
+	
+
+
+</body>
+</html>
