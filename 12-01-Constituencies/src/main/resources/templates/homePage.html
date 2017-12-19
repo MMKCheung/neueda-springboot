@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<style>
+
+</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Home Page</title>
+</head>
+<body>
+	<h1 align="center">Welcome to the Home Page!</h1>
+	<br />
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="container">
+	<p>Click on the map to see the members for the corresponding constituency</p>
+
+<img src="http://archive.niassembly.gov.uk/images/Constmap.jpg" alt="NI Map" usemap=NIMap>
+
+<map name="NIMap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+	
+	
+		</div>
+	
+
+
+</body>
+</html>
