@@ -48,7 +48,9 @@ public class ConstituencyController {
 		
 		//sorts selectedmembers by party name 
 		Collections.sort(selectedMembers, Member.mLAPartyComparator);
-
+		
+		//for constituency title
+		model.addAttribute("constituency", selectedMembers.get(0).getConstituencyName());
 		return "constituency";
 
 	}

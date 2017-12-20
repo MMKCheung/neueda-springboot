@@ -30,6 +30,8 @@ public class Member {
 	private String constituencyName;
 	@JsonProperty("ConstituencyId")
 	private String constituencyId;
+	@JsonProperty("MemberImgUrl")
+	private String image;
 
 	//compare member party names
 	public static Comparator<Member> mLAPartyComparator = new Comparator<Member>() {

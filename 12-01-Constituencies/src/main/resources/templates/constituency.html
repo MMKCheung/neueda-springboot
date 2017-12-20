@@ -3,6 +3,9 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 <style>
+html {
+	overflow-y: scroll;
+}
 th, tr {
 	text-align: center;
 }
@@ -19,33 +22,38 @@ th, tr {
 
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="container">
-
-<!--<p th:text="${member.constituencyName}"></p>
+	<div align="center">
+		<h2 th:text="${constituency}"></h2>
+		</div>
+		<br />
+		<!--<p th:text="${member.constituencyName}"></p>
 -->
 		<table class="table table-striped">
 
 			<tr>
-				<th style="text-align:center">Person ID</th>
-				<th style="text-align:center">Affiliation ID</th>
-				<th style="text-align:center">Member Name</th>
-				<th style="text-align:center">Party</th>
-				<th style="text-align:center">Party Organisation ID</th>
-				
+				<th style="text-align: center">Person ID</th>
+				<th style="text-align: center">Affiliation ID</th>
+				<th style="text-align: center">Member Name</th>
+				<th style="text-align: center">Party</th>
+				<th style="text-align: center">Party Organisation ID</th>
+				<th style="text-align: center">Image</th>
+
 			</tr>
 
 			<tr th:each="member : ${members}">
 				<td th:text="${member.personId}">cerealId</td>
 				<td th:text="${member.affiliationId}">Kellogg's</td>
-				<td th:text="${member.memberFirstName} +  ' ' + ${member.memberLastName}">Cornflakes</td>
+				<td
+					th:text="${member.memberFirstName} +  ' ' + ${member.memberLastName}">Cornflakes</td>
 				<td th:text="${member.party}">Cornflakes</td>
 				<td th:text="${member.partyOrganisationId}">Cornflakes</td>
-
+				<td><img src="" th:src="${member.image}" /></td>
 			</tr>
 
 		</table>
-		
+
 	</div>
-	
+
 
 
 </body>
