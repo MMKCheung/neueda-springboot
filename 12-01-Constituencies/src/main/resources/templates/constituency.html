@@ -3,7 +3,9 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 <style>
-
+th, tr {
+	text-align: center;
+}
 </style>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
@@ -18,26 +20,25 @@
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="container">
 
-
-
+<!--<p th:text="${member.constituencyName}"></p>
+-->
 		<table class="table table-striped">
 
 			<tr>
-				<th>Event Name</th>
-				<th>Date</th>
-				<th>Location</th>
-				<th>Cost</th>
-				<th>Details</th>
-				<th>Event ID</th>
+				<th style="text-align:center">Person ID</th>
+				<th style="text-align:center">Affiliation ID</th>
+				<th style="text-align:center">Member Name</th>
+				<th style="text-align:center">Party</th>
+				<th style="text-align:center">Party Organisation ID</th>
+				
 			</tr>
 
-			<tr th:each="event : ${events}">
-				<td th:text="${event.title}">cerealId</td>
-				<td th:text="${event.startDate}">Kellogg's</td>
-				<td th:text="${event.venue}">Cornflakes</td>
-				<td th:text="${event.cost}">Cornflakes</td>
-				<td><a href="#" th:href="@{/} + ${event.identifier}">View</a></td>
-				<td th:text="${event.identifier}">Cornflakes</td>
+			<tr th:each="member : ${members}">
+				<td th:text="${member.personId}">cerealId</td>
+				<td th:text="${member.affiliationId}">Kellogg's</td>
+				<td th:text="${member.memberFirstName} +  ' ' + ${member.memberLastName}">Cornflakes</td>
+				<td th:text="${member.party}">Cornflakes</td>
+				<td th:text="${member.partyOrganisationId}">Cornflakes</td>
 
 			</tr>
 
