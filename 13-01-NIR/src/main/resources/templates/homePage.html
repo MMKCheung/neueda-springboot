@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<style>
+html {
+	overflow-y: scroll;
+}
+</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Home Page</title>
+</head>
+<body>
+	<h1 align="center">Welcome to the Home Page!</h1>
+	<br />
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<br /><br />
+
+	
+
+
+</body>
+</html>

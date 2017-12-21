@@ -31,9 +31,17 @@ public class WhaleWatcher {
 		System.out.println("The average length is: " + printAverageLength(whales) + "m");
 		
 		System.out.println("The heaviest whales are: " + printHeaviest(whales));
+		
+		printASD(whales);
 	}
 	
-	
+	public static void printASD(ArrayList<Whale> whales) {
+		for(Whale w: whales) {
+		 if(w.getMainOcean().equals("Atlantic")) {
+			 System.out.println(w.getName());
+		 }
+		}
+	}
 	
 	
 	
